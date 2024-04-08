@@ -219,12 +219,16 @@ void onEvent (ev_t ev) {
 
 void setup() {
     Serial.begin(9600);
+    Serial.println("Starting");
     mySerial.begin(9600);
-
+    Serial.println("Starting 1");
+    Serial.println("Starting 3");
     // LMIC init
     os_init();
     // Reset the MAC state. Session and pending data transfers will be discarded.
     LMIC_reset();
+    Serial.println("Starting 4");
+    Serial.println("Starting 5");
 }
 
 void loop() {
@@ -288,3 +292,4 @@ void do_send(osjob_t* j, uint8_t* data) {
     }
     // Next TX is scheduled after TX_COMPLETE event.
 }
+
